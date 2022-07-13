@@ -1,4 +1,3 @@
-Hoang Anh, [7 / 13 / 2022 10: 29 PM]
 import React, { useEffect } from 'react';
 import {
 	Box,
@@ -19,8 +18,8 @@ import { TEAM } from '../../constants/common';
 
 const Section6: React.FC<any> = ({ sxProps }) => {
 	// useEffect(() => {
-	//   AOS.init();
-	//   AOS.refresh();
+	// 	AOS.init();
+	// 	AOS.refresh();
 	// }, []);
 	return (
 		<Container sx={{
@@ -30,16 +29,16 @@ const Section6: React.FC<any> = ({ sxProps }) => {
 			}
 		}}>
 			{/* <SectionTitle
-        title={TEAM.TITLE}
-        subtitle={TEAM.SUBTITLE}
-        sxProps={{ mb: 7 }}
-      /> */}
+				title={TEAM.TITLE}
+				subtitle={TEAM.SUBTITLE}
+				sxProps={{ mb: 7 }}
+			/> */}
 
 
 			<Box data-aos-offset="1800"
 
 				data-aos-duration="1000" data-aos="zoom-in" sx={{ position: 'absolute', inset: 0, top: '0px' }}>
-				<img width={"100%"} src={assets / sec6 / bg.png} style={{ objectFit: "cover" }} alt="" />
+				<img width={"100%"} src={`assets/sec6/bg.png`} style={{ objectFit: "cover" }} alt="" />
 			</Box>
 
 			<Box display={'flex'} mt={{ xs: '80px', sm: '0px' }} mb={{ xs: 5, sm: 10 }} alignItems="center" justifyContent="center"  >
@@ -91,8 +90,8 @@ const Section6: React.FC<any> = ({ sxProps }) => {
 									sx={{
 										width: '100%',
 										height: "100%",
-										// pt: ${(160 / 174) * 100}%,
-										backgroundImage: url(assets / dark / neon - orange - 5.png),
+										// pt: `${(160 / 174) * 100}%`,
+										backgroundImage: `url(assets/dark/neon-orange-5.png)`,
 										backgroundRepeat: 'no-repeat',
 										backgroundSize: 'cover',
 										backgroundPosition: "center",
@@ -113,3 +112,71 @@ const Section6: React.FC<any> = ({ sxProps }) => {
 									width: 'unset !important',
 									maxWidth: '143px !important',
 								}
+
+							} : {
+								display: 'flex', alignItems: 'center', '@media (max-width: 767px)': {
+									paddingLeft: '0 !important',
+									paddingTop: '0 !important',
+									flexBasis: 'unset !important',
+									width: 'unset !important',
+									maxWidth: '143px !important',
+								}
+							}}>
+								<Box width={"fit-content"} >
+
+									<Typography
+										fontSize={24}
+										fontWeight={700}
+										color="#fff"
+										textAlign="right"
+										sx={{
+											textAlign: { xs: 'center', sm: idx % 2 === 1 ? 'left' : 'right' },
+											'@media (max-width: 767px)': {
+												textAlign: 'left',
+											}
+										}}
+									>
+										{name}
+									</Typography>
+									<Typography
+										variant="subtitle1"
+										fontSize={14}
+										fontStyle="italic"
+										sx={{
+											mt: 1,
+											mb: 3,
+											textAlign: { xs: 'center', sm: 'left' },
+											textTransform: 'uppercase',
+											background:
+												'linear-gradient(270deg, #FF5C35 3.42%, #FF612F 98.2%)',
+											WebkitBackgroundClip: 'text',
+											WebkitTextFillColor: 'transparent',
+											backgroundClip: 'text',
+											textFillColor: 'transparent',
+											'@media (max-width: 767px)': {
+												marginBottom: '0 !important',
+												textAlign: 'left',
+											}
+										}}
+									>
+										{role}
+									</Typography>
+								</Box>
+								{/* <Typography
+									fontSize={14}
+									fontWeight={500}
+									lineHeight={1.5}
+									color="#5A6178"
+								>
+									{desc}
+								</Typography> */}
+							</Grid>
+						</Grid>
+					</Grid>
+				))}
+			</Grid>
+		</Container >
+	);
+};
+
+export default Section6;
